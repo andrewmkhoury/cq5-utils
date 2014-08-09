@@ -23,7 +23,7 @@ use Getopt::Long;
 use requestlog qw(parseRequestLog);
 
 ####### The tunables ##########
-my $graph_title="gimme a title!!";
+my $graph_title="Response Time Graph";
 
 my $mime_opt=".*";          # match all -- no filter
 my $path_opt=".*";          # match all -- no filter
@@ -58,7 +58,6 @@ sub evalID(%) {
   my %record=@_;
 
   # timestamps are something like this: 07/Aug/2013:23:02:22 +0200
-
   return if (!defined $record{"timestamp"});
   return if (!defined $record{"duration"});
   #printf "timestamp=%s, duration=%s id=%s\n",$record{"timestamp"},$record{"duration"},$record{"id"};
